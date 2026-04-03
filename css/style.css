@@ -18,14 +18,21 @@ a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Adiciona uma camada escura para o texto branco se destacar*/
-    background-color: rgba(0, 0, 0, 0.6);
+    /* Adiciona uma camada escura para o texto branco se destacar (Padrão para computadores) */
+    background-color: rgba(0, 0, 0, 0.65);
     background-blend-mode: overlay; /* Mistura a cor com a imagem */
     min-height: 400px;
     display: flex; /* Uso de flexbox para centralizar o conteúdo */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Deixa a foto do Hero mais visível/clara no celular */
+@media (max-width: 768px) {
+    .hero-section {
+        background-color: rgba(0, 0, 0, 0.3); /* Menos escuro no celular (30% de opacidade em vez de 65%) */
+    }
 }
 
 /* 2. SELETOR POR CLASSE (Obrigatório) */
