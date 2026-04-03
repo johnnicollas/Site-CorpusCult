@@ -11,10 +11,10 @@ a {
     cursor: pointer;
 }
 
-/* Estilo para a Seção Hero com Imagem de Fundo (Requisito: Imagem de Fundo) */
+/* Estilo para a Seção Hero com Imagem de Fundo */
 .hero-section {
-    /* Substitua 'caminho/para/sua/imagem.jpg' pela sua imagem real */
-    background-image: url('../img/hero-bg.jpg');
+    /* Corrigindo o caminho da imagem de fundo para apontar para a raiz e não /img */
+    background-image: url('../hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,18 +33,20 @@ a {
 .artist-card-container {
     /* USO DE FLEXBOX OBRIGATÓRIO (Mantenha o flexbox para layouts menores ou fallback) */
     display: flex; 
-    flex-wrap: wrap; 
+    flex-direction: column; /* Em telas menores, garante uma coluna de cards empilhados para não ficarem desalinhados */
     justify-content: center;
     gap: 30px; /* Espaçamento entre os cards */
 }
+
 @media (min-width: 1024px) { /* A partir do breakpoint 'lg' */
     .artist-card-container {
         /* USO DE GRID (Opcional, mas atende ao requisito avançado de CSS) */
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
-        max-width: 1200px; /* Limita a largura do container se necessário */
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas iguais */
+        max-width: 1200px; /* Limita a largura do container */
         margin-left: auto;
         margin-right: auto;
+        align-items: stretch; /* Garante que os cards na mesma linha tenham a mesma altura */
     }
 }
 
