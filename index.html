@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corpus Cult - Estúdio de Tatuagem</title>
+    <!-- Carrega a biblioteca Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0d0d0d; color: #f0f0f0; }
+    </style>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header id="main-header" class="bg-black/80 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center h-20">
+            <!-- Logo/Nome do Estúdio: Branco (cor do logo) -->
+            <a href="index.html" class="text-3xl font-bold text-white hover:text-gray-300 transition">
+                Corpus Cult
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-lg" id="desktop-menu">
+                    <li><a href="index.html" class="hover:text-green-500 transition">Início</a></li>
+                    <li><a href="sobre.html" class="hover:text-green-500 transition">Sobre</a></li>
+                    <li><a href="#galeria" class="hover:text-green-500 transition">Galeria</a></li>
+                    <li><a href="contato.html" class="hover:text-green-500 transition">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botão do Menu Mobile (para o JS) -->
+            <button id="menu-toggle" class="md:hidden text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+                <!-- Ícone SVG de menu -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden absolute w-full bg-black/90 shadow-2xl transition-all duration-300">
+            <ul class="flex flex-col text-center py-4 space-y-2 text-xl border-t border-gray-800">
+                <li><a href="index.html" class="block py-2 hover:bg-gray-800 hover:text-green-500 transition">Início</a></li>
+                <li><a href="sobre.html" class="block py-2 hover:bg-gray-800 hover:text-green-500 transition">Sobre</a></li>
+                <li><a href="#galeria" class="block py-2 hover:bg-gray-800 hover:text-green-500 transition">Galeria</a></li>
+                <li><a href="contato.html" class="block py-2 hover:bg-gray-800 hover:text-green-500 transition">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 3. MAIN DE CONTEÚDO PRINCIPAL -->
+    <main class="container mx-auto px-4 py-12 min-h-screen">
+        <!-- Seção Hero/Destaque com Imagem de Fundo (Classe 'hero-section' para o CSS) -->
+        <section class="hero-section text-center py-20 bg-gray-900 rounded-xl shadow-2xl mb-16">
+            
+        <!-- Logo da Corpus Cult -->
+            <div class="mb-4">
+                <img src="logo-icon-white.png" alt="Logo Corpus Cult" class="w-36 h-36 mx-auto rounded-full border-2 border-green-500">
+            </div>
+
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Arte na Sua Pele</h1>
+            <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">Experiência e criatividade em cada traço. Transforme sua ideia em uma arte única.</p>
+            
+            <a href="contato.html" class="inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-green-700 transition transform hover:scale-105">Agende sua Sessão</a>
+        </section>
+
+        <!-- Seção Galeria de Artistas (com uso de Imagem e lista) -->
+        <section id="galeria" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Nossos Artistas em Destaque</h2>
+            
+            <div class="artist-card-container">
+                <!-- Card do Artista 1 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <img src="foto-sandro.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Foto do tatuador Sandro" 
+                         class="rounded-full w-36 h-36 object-cover border-4 border-green-500">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white">Sandro Pereira</h3>
+                        <p class="text-gray-400 mb-2">Especialista em Blackwork e Realismo Preto e Cinza.</p>
+                        <ul class="list-disc list-inside text-gray-500">
+                            <li>Realismo</li>
+                            <li>Blackwork</li>
+                            <li>Cobertura</li>
+                        </ul>
+                        <div class="mt-4">
+                            <!-- Link do Instagram do Tatuador -->
+                            <a href="https://www.instagram.com/sandropereira2?igsh=MWZtYzhnbGVuaHFpYQ==" target="_blank" class="text-green-500 hover:text-green-400 transition text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
+                                Seguir no Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NOVO: Card do Artista 2-->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <img src="foto-laura.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Foto da Laura" 
+                         class="rounded-full w-36 h-36 object-cover border-4 border-green-500">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white">Laura Sampaio</h3>
+                        <p class="text-gray-400 mb-2">Body Piercing.</p>
+                        <ul class="list-disc list-inside text-gray-500">
+                            <li>Dermal</li>
+                            <li>Furos Básicos</li>
+                            <li>Atualizações de joias</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://www.instagram.com/laurabodyart_/" target="_blank" class="text-green-500 hover:text-green-400 transition text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
+                                Seguir no Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card do Artista 3 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <img src="foto-yanci.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Foto do tatuador Yanci" 
+                         class="rounded-full w-36 h-36 object-cover border-4 border-green-500">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white">Yanci </h3>
+                        <p class="text-gray-400 mb-2">Focado em tatuagens OldSchool.</p>
+                        <ul class="list-disc list-inside text-gray-500">
+                            <li>Blackwork</li>
+                            <li>Lettering</li>
+                            <li>Fine-line</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://www.instagram.com/yanci.tattoo/" target="_blank" class="text-green-500 hover:text-green-400 transition text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
+                                Seguir no Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card do Artista 4 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <img src="foto-gabriel.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Foto de Kaze" 
+                         class="rounded-full w-36 h-36 object-cover border-4 border-green-500">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white">Gabriel</h3>
+                        <p class="text-gray-400 mb-2">Especialista em tatuagens em Realismo.</p>
+                        <ul class="list-disc list-inside text-gray-500">
+                            <li>BlackWork</li>
+                            <li>Neo Tradicional</li>
+                            <li>Linework</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://www.instagram.com/sousa.tattooer/" target="_blank" class="text-green-500 hover:text-green-400 transition text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
+                                Seguir no Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card do Artista 5 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <img src="foto-erik.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Foto de Filipe" 
+                         class="rounded-full w-36 h-36 object-cover border-4 border-green-500">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white">Erik</h3>
+                        <p class="text-gray-400 mb-2">Especialista em tatuagens OldSchool</p>
+                        <ul class="list-disc list-inside text-gray-500">
+                            <li>Fine Line</li>
+                            <li>Oriental</li>
+                            <li>New Tradicional</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://www.instagram.com/eriknoirtattoo/" target="_blank" class="text-green-500 hover:text-green-400 transition text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
+                                Seguir no Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card do Artista 6 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <img src="foto-juliana.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Foto de Juliana" 
+                         class="rounded-full w-36 h-36 object-cover border-4 border-green-500">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white">Juliana</h3>
+                        <p class="text-gray-400 mb-2">Especialista em cores vibrantes, New School e estilos geek.</p>
+                        <ul class="list-disc list-inside text-gray-500">
+                            <li>New School</li>
+                            <li>Full Color</li>
+                            <li>Geek / Pop</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://www.instagram.com/juutattoo__/" target="_blank" class="text-green-500 hover:text-green-400 transition text-sm flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg>
+                                Seguir no Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Link Externo -->
+            <div class="text-center mt-10">
+                <a href="https://www.instagram.com/corpuscult/" target="_blank" class="text-gray-400 hover:text-green-500 underline transition">Veja Mais Trabalhos no Instagram do Studio</a>
+            </div>
+        </section>
+        
+        <!-- Seção de Postagens do Instagram -->
+        <section id="postagens" class="my-16 p-6 bg-gray-900 rounded-xl shadow-2xl">
+            <h2 class="text-4xl font-bold text-center mb-8 text-white">Artes em Destaque</h2>
+            
+            <!-- Grid para Postagens (3 colunas em desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Postagem 1 -->
+                <a href="https://www.instagram.com/p/DVPS4SwAb2I/" target="_blank" class="block group relative overflow-hidden rounded-xl shadow-lg border-2 border-gray-800 hover:border-green-600 transition transform hover:scale-[1.01]">
+                    <!-- Imagem da Postagem -->
+                    <img src="post1.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Tatuagem Solo Leveling" 
+                         class="w-full h-full object-cover aspect-square transition duration-500 group-hover:opacity-75">
+                    
+                    <!-- Overlay de Ícone de Link (aparece no hover) -->
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 rounded-full"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                </a>
+
+                <!-- Postagem 2 -->
+                <a href="https://www.instagram.com/p/DVqcvZWjSF1/" target="_blank" class="block group relative overflow-hidden rounded-xl shadow-lg border-2 border-gray-800 hover:border-green-600 transition transform hover:scale-[1.01]">
+                    <img src="post2.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Tatuagem fechamento de braço BioOrganico" 
+                         class="w-full h-auto object-cover aspect-square transition duration-500 group-hover:opacity-75">
+                         
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 rounded-full"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                </a>
+
+                <!-- Postagem 3 -->
+                <a href="https://www.instagram.com/p/DVjbRmqkbkq/?img_index=1"_blank" class="block group relative overflow-hidden rounded-xl shadow-lg border-2 border-gray-800 hover:border-green-600 transition transform hover:scale-[1.01]">
+                    <img src="post3.jpg" 
+                         onerror="this.onerror=null;" 
+                         alt="Tatuagem Águia" 
+                         class="w-full h-auto object-cover aspect-square transition duration-500 group-hover:opacity-75">
+                         
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                </a>
+            </div>
+            
+        </section>
+
+
+        <!-- Seção de Localização com Mapa Embutido -->
+        <section id="localizacao" class="my-16 p-6 bg-gray-900 rounded-xl shadow-2xl">
+            <h2 class="text-4xl font-bold text-center mb-6 text-white">Onde Nos Encontrar</h2>
+            
+            <p class="text-center text-lg text-gray-300 mb-6">
+                Nosso estúdio está localizado em: 
+                <span class="font-semibold text-green-400 block mt-1">Rua Irineu Joffily 235 Centro, Campina Grande - Pb</span>
+            </p>
+
+            <!-- Iframe do Google Maps (Mapa Embutido) -->
+            <div class="w-full overflow-hidden rounded-lg border-4 border-green-600 shadow-xl">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.622606554868!2d-35.8856015243169!3d-7.227447470984925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ac1e469e38d4a9%3A0xc3f345c22533c36!2sRua%20Irineu%20Joffily%2C%20235%20-%20Centro%2C%20Campina%20Grande%20-%20PB%2C%2058400-050%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1678972304859!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de localização do estúdio Corpus Cult">
+                </iframe>
+            </div>
+
+            <!-- Link direto para o Google Maps para navegação em dispositivos móveis -->
+            <div class="text-center mt-6">
+                 <a href="https://maps.app.goo.gl/9cKUfUNFfQ5aCjCe9" target="_blank" class="inline-block bg-green-600 text-white font-bold py-2 px-6 rounded-full text-md shadow-lg hover:bg-green-700 transition">
+                    Abrir no Google Maps para Navegação
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Botão Voltar ao Topo (Manipulado pelo JS) -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-opacity opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <!-- 4. FOOTER OBRIGATÓRIO -->
+    <footer class="bg-black/90 text-gray-400 py-8 mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Corpus Cult. Todos os direitos reservados.</p>
+            <div class="mt-2 text-sm">
+                <a href="sobre.html" class="hover:text-green-500 mx-2">Política de Privacidade</a> | 
+                <a href="contato.html" class="hover:text-green-500 mx-2">Localização</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrega o script JS externo obrigatório -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

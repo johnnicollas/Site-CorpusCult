@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corpus Cult - Contato</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0d0d0d; color: #f0f0f0; }
+    </style>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER OBRIGATÓRIO -->
+    <header id="main-header" class="bg-black/80 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center h-20">
+            <a href="index.html" class="text-3xl font-bold text-white hover:text-gray-300 transition">
+                Corpus Cult
+            </a>
+            <!-- 2. NAV DE NAVEGAÇÃO OBRIGATÓRIA -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-lg" id="desktop-menu">
+                    <li><a href="index.html" class="hover:text-green-500 transition">Início</a></li>
+                    <li><a href="sobre.html" class="hover:text-green-500 transition">Sobre</a></li>
+                    <li><a href="contato.html" class="text-green-500 transition">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden absolute w-full bg-black/90 shadow-2xl transition-all duration-300">
+            <ul class="flex flex-col text-center py-4 space-y-2 text-xl border-t border-gray-800">
+                <li><a href="index.html" class="block py-2 hover:bg-gray-800 hover:text-green-500 transition">Início</a></li>
+                <li><a href="sobre.html" class="block py-2 hover:bg-gray-800 hover:text-green-500 transition">Sobre</a></li>
+                <li><a href="contato.html" class="block py-2 hover:bg-gray-800 hover:text-green-500 transition">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 3. MAIN DE CONTEÚDO PRINCIPAL OBRIGATÓRIO -->
+    <main class="container mx-auto px-4 py-12 min-h-screen">
+        <h1 class="text-4xl font-bold text-green-500 mb-8 text-center">Agendamento e Dúvidas</h1>
+
+        <section class="max-w-xl mx-auto bg-gray-900 p-8 rounded-xl shadow-2xl">
+            <!-- FORMULÁRIO -->
+            <form id="contact-form" class="space-y-4">
+                <div class="form-input-group">
+                    <label for="nome" class="block text-gray-300 mb-1">Nome</label>
+                    <!-- INPUT TYPE TEXT OBRIGATÓRIO COM ATRIBUTOS REQUIRED E PLACEHOLDER -->
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome aqui" required class="w-full">
+                </div>
+
+                <div class="form-input-group">
+                    <label for="telefone" class="block text-gray-300 mb-1">Telefone (Opcional)</label>
+                    <!-- INPUT TYPE NUMBER OBRIGATÓRIO -->
+                    <input type="number" id="telefone" name="telefone" placeholder="(99) 99999-9999" class="w-full">
+                </div>
+
+                <div class="form-input-group">
+                    <label for="estilo" class="block text-gray-300 mb-1">Tatuador Preferido</label>
+                    <!-- SELECT E OPTION OBRIGATÓRIOS -->
+                    <select id="estilo" name="estilo" required class="w-full">
+                        <option value="">-- Selecione um Tatuador --</option>
+                        <option value="Sandro">Sandro</option>
+                        <option value="Gabriel">Gabriel</option>
+                        <option value="Yanci">Yanci</option>
+                        <option value="Erickson">Erickson</option>
+                        <option value="Juliana">Juliana</option>
+                    </select>
+                </div>
+
+                <div class="form-input-group">
+                    <label for="mensagem" class="block text-gray-300 mb-1">Descreva sua Ideia</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Tamanho, local do corpo e detalhes da arte" required class="w-full"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-green-700 transition transform hover:scale-[1.01]">
+                    Enviar Pedido de Orçamento
+                </button>
+
+                <!-- Div para exibir mensagens do JS -->
+                <div id="form-message"></div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-opacity opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <!-- 4. FOOTER OBRIGATÓRIO -->
+    <footer class="bg-black/90 text-gray-400 py-8 mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Corpus Cult. Todos os direitos reservados.</p>
+            <div class="mt-2 text-sm">
+                <a href="sobre.html" class="hover:text-green-500 mx-2">Política de Privacidade</a> | 
+                <a href="contato.html" class="hover:text-green-500 mx-2">Localização</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
