@@ -1,0 +1,109 @@
+:root {
+    --primary-color: #0f9d58; /* Verde para destaque */
+    --primary-hover: #0c7b46; /* Verde mais escuro no hover */
+    --link-color: #0f9d58;
+}
+
+/* 1. SELETOR POR TAG (Obrigatório) */
+/* Aplica um estilo base a todos os links */
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para a Seção Hero com Imagem de Fundo (Requisito: Imagem de Fundo) */
+.hero-section {
+    /* Substitua 'caminho/para/sua/imagem.jpg' pela sua imagem real */
+    background-image: url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Adiciona uma camada escura para o texto branco se destacar*/
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay; /* Mistura a cor com a imagem */
+    min-height: 400px;
+    display: flex; /* Uso de flexbox para centralizar o conteúdo */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. SELETOR POR CLASSE (Obrigatório) */
+/* Atualizando .artist-card-container para usar Grid em telas maiores */
+.artist-card-container {
+    /* USO DE FLEXBOX OBRIGATÓRIO (Mantenha o flexbox para layouts menores ou fallback) */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os cards */
+}
+@media (min-width: 1024px) { /* A partir do breakpoint 'lg' */
+    .artist-card-container {
+        /* USO DE GRID (Opcional, mas atende ao requisito avançado de CSS) */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
+        max-width: 1200px; /* Limita a largura do container se necessário */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* 3. SELETOR POR ID (Obrigatório) */
+/* Estilo específico para o cabeçalho principal */
+#main-header {
+    border-bottom: 2px solid var(--primary-color); /* Linha sutil para destaque */
+}
+
+/* 4. SELETOR DESCENDENTE (Obrigatório) */
+/* Seleciona todos os links <a> que estão dentro do rodapé <footer> */
+footer a {
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+/* 5. SELETOR DE FILHO (>) (Obrigatório) */
+/* Seleciona apenas os <li> que são filhos diretos da ul#desktop-menu */
+#desktop-menu > li {
+    padding: 0 5px;
+}
+
+/* 6. PSEUDO-CLASSE :HOVER (Obrigatório - Mínimo 1 Avançado) */
+/* Efeito de destaque ao passar o mouse sobre links no rodapé */
+footer a:hover {
+    color: var(--primary-color); 
+    text-decoration: underline;
+}
+
+/* Exemplo de Estilização de Formulário (Requisito) */
+/* Estiliza o campo de input */
+.form-input-group input[type="text"], 
+.form-input-group input[type="email"],
+.form-input-group input[type="number"],
+.form-input-group textarea,
+.form-input-group select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* PSEUDO-CLASSE :FOCUS (Requisito) */
+.form-input-group input:focus,
+.form-input-group textarea:focus,
+.form-input-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 157, 88, 0.5); /* Sombra verde */
+}
+
+/* 7. MEDIA QUERY (Opcional, mas incluído para boa prática/demonstração) */
+/* Ajusta o tamanho da fonte do título principal em telas menores (Mínimo 1 Obrigatório) */
+@media (max-width: 640px) {
+    #main-header .text-3xl {
+        font-size: 1.75rem; /* 28px */
+    }
+}
